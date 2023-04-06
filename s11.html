@@ -31,7 +31,7 @@
     const str = "ABcd";
     // let str = "ABcd"
     // console.log(str.charAt(0));
-    // console.log(str.concat("e")); //합친다
+    // console.log(str.concat("e")); //요소를 합친다
     // console.log(str + "e");
     // str = str + "e";
     // console.log(str);
@@ -52,9 +52,102 @@
     // console.log(str.padStart(10).trim()); //좌우 공백을 없애줌(trim)
     // console.log(str.padStart(10).replaceAll());
     // console.log("aa  aa".replaceAll(" ", ""));
+    //=================================================================
 
-
-
+    //배열 메소드=======================================================
+    const arr = ["A", "B", "c", "d"];
+    // console.log(arr.concat("e,","f"));
+    // console.log(arr.concat(["g"]));
+    // console.log(arr.copyWithin(0,3,4));
+    // console.log(arr.fill("a"));
+    // console.log([[1,2],[3,4]].flat());// 차원을 맞춰줌 2ㅡ>1차원
     
+    // console.log(arr.pop()); //맨 뒤에 있는거 꺼냄
+    // console.log(arr);
+
+    // console.log(arr.push("e"));
+    // console.log("arr");
+
+    // console.log(arr.shift());//먼저 넣은걸 빼는거
+    // console.log(arr);
+
+    // console.log(arr.splice(1,1)); //1번 인덱스에 있는거 한 개 삭제
+    // console.log(arr);
+
+    // const idx = arr.indexOf("d"); //여려개 있을 경우 잘라내기 어렵다.
+    // console.log(arr.splice(idx,1));
+    // console.log(arr);
+    //================================================================
+
+    // 콜백(callback===================================================
+    // const temp = () => console.log("ㅎㅇ");
+    // const temp1 = () => console.log("ㅂㅇ");
+    
+    // const myFunc = (func) => {
+    //     // 작업 완료시 외부 함수를 작동하고 싶다
+    //     // 외부 함수를 개발자가 선택하게 하고 싶다
+    //     func();
+    // }
+    // myFunc(temp);
+    // myFunc(() => console.log("asdf")); //매게변수를 함수에 넣을 수 있다.
+
+
+    // const checkName = (name, checker) => { // 이름을 받고 체커라는 함수를 가진다.
+    //     const result = checker(name); //name이라는 메게변수를 받은 함수
+    //     console.log(result);
+    // }
+
+    // //체커에 들어갈
+    // const tempName = "jaybon";
+    // const tempChecker = (name) => { //name이라는 메게변수를 받게 만들어줌
+    //     return name.indexOf("a");
+    // }
+    // checkName(tempName, tempChecker);
+    
+    // 함수를 매개변수로 받는 배열 메소드
+    // forEach, filter, map, every, find, some, reduce
+    
+    // for (let index = 0; index < arr.length; index++) {
+    //     console.log(arr[index]);
+    // }
+
+    // for (const item of arr) {
+    //     console.log(item);
+    // }
+
+    // for(const key in arr) {
+    //     console.log(arr[key]);
+    // }
+
+    // const callbackFn = (value, index, array) => {
+    //     console.log(value);
+    //     console.log(index);
+    //     console.log(array);
+    // }
+    // arr.forEach(callbackFn);
+
+    // arr.forEach(value => console.log(value));
+
+    // console.log(arr.filter((value) => value != "d"));
+
+    // const predicate = (value) => {
+    //     return value == "d";
+    // }
+    // arr.filter(predicate);
+
+    // 객체 Map과 array 메소드 map은 전혀 상관이 없다
+    // 기존 데이터를 변경하거나 타입을 바꿔서 배열을 만들 때 사용
+    const callback = (e) => {
+        // return e.repeat(3);
+        // return [e]
+        return arr.indexOf(e);
+    }
+    
+    const result = arr.map(callback);
+    console.log(result);
+    //===================================================================
+    
+    
+
 
 </script>

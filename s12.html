@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>제목1</h1>
+    <h1>제목2</h1>
+
+    <div id="myDiv" style="color:red"; onclick="func()" >아이디</div>
+
+    <p class="my-div first">첫번째</p>
+    <p class="my-div second">두번째</p>
+</body>
+<script>
+        // <h1 class="mytag"></h1> /*h1.mytag*/
+   //html 컨트롤
+   const h1List = window.document.getElementsByTagName("h1"); //body뒤에있는 태그를 여러개 가져오는 항목?
+   const h1List2 = document.querySelector("h1"); //
+
+   console.log(h1List);
+   console.log(h1List2.innerText);
+
+   const myDivEl = document.getElementById("myDiv");
+   // querySelector는 css 선택자를 이용한다.
+   const myDivElement = document.querySelector("div[id*='m']"); //body안에 있는
+    console.log(myDivElement);
+   console.log(myDivEl);
+
+   const pElementList = document.getElementsByClassName("my-div");
+   const pElementList1 = document.querySelectorAll(".my-div");
+
+   pElementList1.forEach(element => { //함수를 받는 메소드
+        console.log(element.innerText);
+   });
+
+   // 속성 지정
+//    myDivEl.setAttribute("style", "color: blue;");
+
+//    myDivEl.style.color = "grey";
+   
+   //표준 속성은 .으로 찾아서 입력
+   myDivEl.innerText = "바꿈";
+   //비표준 속성은 setAttribute 사용
+   myDivEl.setAttribute("asdf","메롱");
+
+   // 태그에 기능 추가
+   // 1. 태그의 속성에 기능 추가하기 (onclick = "alert('확인')")
+
+   const func = () => {
+        alert("확인");
+   }
+
+   // 2.태그 객체의 기능 정의 해주기 
+   myDivEl.onclick = func; //()를 넣으면 미리 작동함
+//    console.log(myDivEl.onclick);
+//    myDivEl.onclick = null; //기능 막기
+
+   // 3.리스너 추가하기
+   myDivEl.addEventListener("click",func); //이벤트를 주면 듣고 있는 애를 만든다.
+   myDivEl.addEventListener("click",()=>{ //익명함수
+        alert("두번째 확인")
+   }); 
+   myDivEl.removeEventListener("click",func);
+
+   //태그 만들기
+   const newElement = document.createElement("div");
+   newElement.innerText = "자스로 만든 태그";
+   newElement.onclick = () => alert("wow");
+   document.body.appendChild(newElement);
+
+   const newElement1 = document.createElement("h2");
+   newElement1.innerText = "교체 태그";
+   document.body.replaceChild(newElement1, newElement);
+
+   document.body.removeChild(newElement1);
+   
+   //클래스
+   const divElement = document.querySelector(".my-div");
+   console.log(divElement.className); //클래스 이름 그 자체를 가져옴
+   console.log(divElement.classList); //리스트 타입
+
+   //divElement.className = "check-class";
+   divElement.classList.add("check-class");
+
+   //css 가져오기
+   console.log(myDivEl.style.color);
+   console.log(getComputedStyle(myDivEl).color);
+
+</script>
+</html>

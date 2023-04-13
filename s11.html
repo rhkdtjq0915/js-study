@@ -137,17 +137,55 @@
 
     // 객체 Map과 array 메소드 map은 전혀 상관이 없다
     // 기존 데이터를 변경하거나 타입을 바꿔서 배열을 만들 때 사용
-    const callback = (e) => {
-        // return e.repeat(3);
-        // return [e]
-        return arr.indexOf(e);
-    }
+    // const callback = (e) => {
+    //     // return e.repeat(3);
+    //     // return [e]
+    //     return arr.indexOf(e);
+    // }
     
-    const result = arr.map(callback);
-    console.log(result);
+    // const result = arr.map(callback);
+    // console.log(result);
     //===================================================================
-    
-    
 
+    //객체
+    // var obj = {
+
+    //     key1 : "value1",
+    //     key2()
+    //     {
+    //         this.key1;
+    //     },
+    //     key3 : 
+    //     {
+    //         subKey1 : "subValue1",
+    //     },
+    // };
+    // //obj.key2();
+    // obj?.key3?.subkey1
+
+    // // Date
+    // console.log(`Date.now() : ${Date.now()}`);
+    // const myDate = new Date();
+    // const tempDate = new Date(`2023-01-01T12:00:00.000z`);
+    // console.log(myDate);
+    // console.log(tempDate);
+
+    // console.log(`myDate.getFullYear() : ${myDate.getFullYear()}`);
+    // console.log(`myDate.getMonth() : ${myDate.getMonth() + 1}`);
+    // console.log(`myDate.getDate() : ${myDate.getDate()}`);
+    // console.log(`myDate.getDay() : ${myDate.getDay()}`); //일요일이 0
+    // console.log(`myDate.toJSON() : ${myDate.toJSON()}`); //표준시간
+    // console.log(`myDate.toUTCString() : ${myDate.toUTCString()}`);
+    //myDate.getTime();
+    //window.document.getElementById("");
+    // location.href = "";
+    // window.location.href = "";
+
+    const a = 1;
+    console.log(a);
+
+    b = 1; //window.b = 1;
+    console.log(window.a);
+    console.log(window.b);
 
 </script>
